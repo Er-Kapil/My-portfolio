@@ -29,7 +29,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <div style={{ width: '100%', height: 600, position: 'relative' }}>
+        <div style={{ width: '100%', height: 600, position: 'fixed' }}>
           <LiquidEther
             colors={['#5227FF', '#FF9FFC', '#B497CF']}
             mouseForce={20}
@@ -48,11 +48,15 @@ export default function RootLayout({
             autoRampDuration={0.6}
             color0="#cb27ff"
             color1="#ac9fff"
-            color2="#a9d0fb">
-            {children}
-
-          </LiquidEther >
+            color2="#a9d0fb"
+          />
         </div >
+        <main className="relative z-10">
+          {children}
+        </main>
+
+
+
       </body>
     </html >
 
